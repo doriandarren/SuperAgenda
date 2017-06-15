@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class ListPerson {
 
+	//Contactos
 	private Person[] contacts;
 	
 	public ListPerson(String[] strContacts){
