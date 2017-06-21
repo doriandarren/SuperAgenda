@@ -35,7 +35,7 @@ public class ContactApp {
 				break;
 			case "4":
 				UserInterface.clearScreen();
-				String strInputName = Input.scanLineSecure("Escriba el nombre: ", 1, false);	
+				String strInputName = Input.scanLineSecure("Escriba el nombre: ", 1, false);
 				UserInterface.printListContacts(listContacts.findByName(strInputName));
 				break;
 			case "5":

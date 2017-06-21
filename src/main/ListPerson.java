@@ -113,20 +113,22 @@ public class ListPerson {
 	 * @return
 	 */
 	public Person[] findByName(String strName){		
-		Person array[] = new Person[contacts.length];
+		Person personWithName[]=null;
 		int counter = 0;
 		
 		for(Person person:contacts){
-			String name = person.getName().toLowerCase();
-			if(name.startsWith(strName.toLowerCase()))
-				array[counter++] = person;
-		}
+			String name = person.getFullName().toLowerCase();
+			if(name.contains(strName.toLowerCase()))
+				counter++;
+		}		
 		
-		Person personWithName[] = new Person[counter];
-		for(int i=0, k=0; i<contacts.length;i++){
-			if(contacts[0].getName().contains(strName))
-				personWithName[k++]=contacts[i];
-		}
+		if(counter>0){
+			personWithName = new Person[counter];
+			for(int i=0, k=0; i<contacts.length;i++){
+				if(contacts[i].getFullName().contains(strName.toLowerCase()))
+					personWithName[k++]=contacts[i];
+			}
+		}		
 		return personWithName;	
 	}
 
@@ -135,22 +137,23 @@ public class ListPerson {
 	 * @return
 	 */
 	public Person[] findByEmail(String strMail){
-		Person array[] = new Person[contacts.length];  
+		Person personWithEmail[]=null;
 		int counter = 0;
 		
-		for(Person person: contacts){
-			String name = person.getEmail().toLowerCase();
-			if(name.startsWith(strMail.toLowerCase()))
-				array[counter++]=person; 
-		}
+		for(Person person:contacts){
+			String name = person.getFullName().toLowerCase();
+			if(name.contains(strMail.toLowerCase()))
+				counter++;
+		}		
 		
-		Person personsWidthEmail[] = new Person[counter];  
-		for(int i=0,k=0; i<contacts.length; i++){
-			if(contacts[i].getEmail().contains(strMail))
-				personsWidthEmail[k++]=contacts[i];
-		}
-		
-		return personsWidthEmail;
+		if(counter>0){
+			personWithEmail = new Person[counter];
+			for(int i=0, k=0; i<contacts.length;i++){
+				if(contacts[i].getFullName().contains(strMail.toLowerCase()))
+					personWithEmail[k++]=contacts[i];
+			}
+		}		
+		return personWithEmail;
 	}
 		
 
