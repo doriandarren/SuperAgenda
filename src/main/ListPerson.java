@@ -161,17 +161,20 @@ public class ListPerson {
 	public Person[] sort(){
 		Person[] arrayNew = new Person[contacts.length];		
 		String[] arraySort = new String[contacts.length];
-			
+		
+		String name;	
+		
 		for(int i=0; i<arraySort.length;i++){			
-			arraySort[i]=contacts[i].getFullName(); 
+			name=contacts[i].getFullName();
+			arraySort[i] = name.toLowerCase();
 		}
 		
 		Arrays.sort(arraySort);
 		
 		for(int i=0; i<arraySort.length;i++){				
-			String name = arraySort[i];			
+			name = arraySort[i];			
 			for(int j=0; j<contacts.length; j++){				
-				if(name.equals(contacts[j].getFullName())){
+				if(name.equals(contacts[j].getFullName().toLowerCase())){
 					arrayNew[i]= contacts[j]; 
 				}
 			}

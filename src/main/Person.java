@@ -77,11 +77,11 @@ public class Person {
 	@Override
 	public String toString(){
 		String baseStr = super.toString(); 	
-		return baseStr + "    person: " + name  + " " + surname + " " + email + " " + phone + " "  + address;	
+		return baseStr + "    person: " + name  + " " + surname + " " + phone + " " + email + " "  + address;	
 	}
 	
 	public String toFileFormat(){
-		return this.name  + " " + this.surname + ";" + this.email + ";" + this.phone + ";"  + this.address;
+		return this.name  + " " + this.surname + ";" + this.phone + ";" + this.email + ";"  + this.address;
 	}
 	
 	

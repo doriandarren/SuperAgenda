@@ -1,10 +1,10 @@
 package util;
 import java.util.Scanner;
+import java.util.concurrent.RecursiveAction;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Input {
-	
 	
 	private static final String PATTERN_TEXT = "[A-Za-z\\s]+";	
 	private static final String PATTERN_NUMBER = "[0-9-\\,\\.]+";
@@ -23,9 +23,11 @@ public class Input {
 	 * 				[2-Texto y Numero] 
 	 * 				[3-Validar email] 
 	 * 				[4- solo numeros]
+	 * @param type 
+	 * 			[true-Acepta Nulo]
 	 * @return
 	 */
-	public static String scanLineSecure(String info, int optionFormat){
+	public static String scanLineSecure(String info, int optionFormat, boolean nulo){
 		String inputStr;		
 		do{
 			System.out.print(info);
@@ -33,8 +35,12 @@ public class Input {
 			inputStr = reader.nextLine();
 			inputStr = inputStr.trim();
 			
-			if(inputStr.isEmpty()){
-				System.out.println(" Ingrese un valor...");
+			if(inputStr.isEmpty()){				
+				if(nulo){
+					break;
+				}else{
+					System.out.println(" Ingrese un valor...");
+				}
 			}else if(optionFormat==1){
 				boolean val = validateOnlyText(inputStr);
 				if(!val){

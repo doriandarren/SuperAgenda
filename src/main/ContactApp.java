@@ -35,16 +35,26 @@ public class ContactApp {
 				break;
 			case "4":
 				UserInterface.clearScreen();
-				String strInputName = Input.scanLineSecure("Escriba el nombre: ", 1);	
+				String strInputName = Input.scanLineSecure("Escriba el nombre: ", 1, false);	
 				UserInterface.printListContacts(listContacts.findByName(strInputName));
 				break;
 			case "5":
 				UserInterface.clearScreen();
-				String strInputEmail = Input.scanLineSecure("Escriba el email: ", 3);	
-				UserInterface.printListContacts(listContacts.findByName(strInputEmail));
+				String strInputEmail = Input.scanLineSecure("Escriba el email: ", 3, false);	
+				UserInterface.printListContacts(listContacts.findByEmail(strInputEmail));
 				break;	
 				
+			case "6":
+				UserInterface.clearScreen();
+				UserInterface.printListContacts(listContacts.getPersons());
+				String opcEdit = Input.scanLineSecure("Número a Editar: ", 4, false);
+				int index = Integer.valueOf(opcEdit);
+				UserInterface.printContact(listContacts.getPersons(), index);
+				String strEdit = UserInterface.inputEditRegister(listContacts.getPersons(), index);
+				//guardar registro
 				
+				
+				break;
 				
 			case "9":
 				UserInterface.clearScreen();
