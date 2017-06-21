@@ -68,14 +68,15 @@ public class UserInterface {
 	
 	//Imprimir lista de registros
 	public static void printListContacts(Person[] person) {
+		//Controlar cuando no exista el Objeto Person
 		System.out.println("Listar Todos");
 		System.out.println("#\t NOMBRE \t APELLIDO \t\t TELEFONO \t\t EMAIL \t\t DIRECCIÓN");
-		for(int i=0; i<person.length;i++){
-			System.out.println("["+ (i+1) +"]" + "\t" + person[i].getName()+ 
-					"\t" + person[i].getSurname() + "\t" + person[i].getPhone()+ 
-					"\t" + person[i].getEmail()+ "\t" + person[i].getAddress());
+		for (int i = 0; i < person.length; i++) {
+			System.out.println("[" + (i + 1) + "]" + "\t" + person[i].getName() + "\t" + person[i].getSurname() + "\t"
+					+ person[i].getPhone() + "\t" + person[i].getEmail() + "\t" + person[i].getAddress());
 		}
-	}	
+
+	}
 	
 	//Imprimir un solo registro
 	public static void printContact(Person[] person, int index){

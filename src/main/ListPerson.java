@@ -125,7 +125,7 @@ public class ListPerson {
 		if(counter>0){
 			personWithName = new Person[counter];
 			for(int i=0, k=0; i<contacts.length;i++){
-				if(contacts[i].getFullName().contains(strName.toLowerCase()))
+				if(contacts[i].getFullName().toLowerCase().contains(strName.toLowerCase()))
 					personWithName[k++]=contacts[i];
 			}
 		}		
@@ -149,7 +149,7 @@ public class ListPerson {
 		if(counter>0){
 			personWithEmail = new Person[counter];
 			for(int i=0, k=0; i<contacts.length;i++){
-				if(contacts[i].getFullName().contains(strMail.toLowerCase()))
+				if(contacts[i].getFullName().toLowerCase().contains(strMail.toLowerCase()))
 					personWithEmail[k++]=contacts[i];
 			}
 		}		
