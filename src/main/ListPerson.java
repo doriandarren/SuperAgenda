@@ -113,7 +113,7 @@ public class ListPerson {
 	 * @return
 	 */
 	public Person[] findByName(String strName){		
-		Person personWithName[]=null;
+		Person[] personWithName=null;
 		int counter = 0;
 		
 		for(Person person:contacts){
@@ -122,13 +122,12 @@ public class ListPerson {
 				counter++;
 		}		
 		
-		if(counter>0){
-			personWithName = new Person[counter];
-			for(int i=0, k=0; i<contacts.length;i++){
-				if(contacts[i].getFullName().toLowerCase().contains(strName.toLowerCase()))
-					personWithName[k++]=contacts[i];
-			}
-		}		
+		personWithName = new Person[counter];
+		for (int i = 0, k = 0; i < contacts.length; i++) {
+			if (contacts[i].getFullName().toLowerCase().contains(strName.toLowerCase()))
+				personWithName[k++] = contacts[i];
+		}
+		
 		return personWithName;	
 	}
 
@@ -137,7 +136,7 @@ public class ListPerson {
 	 * @return
 	 */
 	public Person[] findByEmail(String strMail){
-		Person personWithEmail[]=null;
+		Person[] personWithEmail=null;
 		int counter = 0;
 		
 		for(Person person:contacts){
@@ -146,13 +145,12 @@ public class ListPerson {
 				counter++;
 		}		
 		
-		if(counter>0){
-			personWithEmail = new Person[counter];
-			for(int i=0, k=0; i<contacts.length;i++){
-				if(contacts[i].getFullName().toLowerCase().contains(strMail.toLowerCase()))
-					personWithEmail[k++]=contacts[i];
-			}
-		}		
+		personWithEmail = new Person[counter];
+		for (int i = 0, k = 0; i < contacts.length; i++) {
+			if (contacts[i].getFullName().toLowerCase().contains(strMail.toLowerCase()))
+				personWithEmail[k++] = contacts[i];
+		}
+				
 		return personWithEmail;
 	}
 		

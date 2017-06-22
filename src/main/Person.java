@@ -34,6 +34,8 @@ public class Person {
 		setAddress(values[3]);	
 	}
 	
+	public Person() {}	
+	
 	public String getName() {
 		return name;
 	}
