@@ -4,6 +4,17 @@ import util.Input;
 
 public class UserInterface {
 	
+	public static String formatterInput(String pal) {
+		String str = pal + ";";
+		return str;
+	}
+	
+	public static void clearScreen(){		
+		for(int i=0; i<50;i++){
+			System.out.println();
+		}
+	}	
+	
 	public static String menuScreem(){
 		final String menuDescripcion[] = {"[1] Agregar", "[2] Listar Todos", "[3] Ordenar Nombre", "[4] Buscar nombre",
 				"[5] Buscar Email","[6] Editar", "[7] Eliminar","(9) Exit"};		
@@ -45,7 +56,7 @@ public class UserInterface {
 				
 		retornStr = Input.scanLineSecure("Teléfono: ", 5,true);
 		if(retornStr.isEmpty() || person.getPhone().equals(retornStr)){
-			newPhone = person.getSurname();
+			newPhone = person.getPhone();
 		}else{
 			newPhone = retornStr;
 		}		
@@ -122,14 +133,5 @@ public class UserInterface {
 	}
 	
 		
-	public static String formatterInput(String pal) {
-		String str = pal + ";";
-		return str;
-	}
 	
-	public static void clearScreen(){		
-		for(int i=0; i<50;i++){
-			System.out.println();
-		}
-	}	
 }
